@@ -1,26 +1,192 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+:root {}
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Text sizes */
+  --text-xxx-small: 8px;
+  --text-xx-small: 10px;
+  --text-x-small: 12px;
+  --text-small: 14px;
+  --text-medium: 16px;
+  --text-large: 18px;
+  --text-x-large: 20px;
+  --text-h6: 14px;
+  --text-h5: 16px;
+  --text-h4: 18px;
+  --text-h3: 22px;
+  --text-h2: 26px;
+  --text-h1: 34px;
+
+  /* Line heights */
+  --leading-xxx-small: 1.55;
+  --leading-xx-small: 1.55;
+  --leading-x-small: 1.55;
+  --leading-small: 1.55;
+  --leading-medium: 1.55;
+  --leading-large: 1.55;
+  --leading-x-large: 1.55;
+  --leading-h6: 1.5;
+  --leading-h5: 1.5;
+  --leading-h4: 1.45;
+  --leading-h3: 1.4;
+  --leading-h2: 1.35;
+  --leading-h1: 1.3;
+
+  /* dark Colors */
+  --color-dark-0: #C1C2C5;
+  --color-dark-1: #A6A7AB;
+  --color-dark-2: #909296;
+  --color-dark-3: #5C5F66;
+  --color-dark-4: #373A40;
+  --color-dark-5: #2C2E33;
+  --color-dark-6: #25262B'
+  --color-dark-7: #1A1B1E;
+  --color-dark-8: #141517;
+  --color-dark-9: #101113;
+
+  /* gray Colors */
+  --color-gray-0: #F8F9FA;
+  --color-gray-1: #F1F3F5;
+  --color-gray-2: #E9ECEF;
+  --color-gray-3: #DEE2E6;
+  --color-gray-4: #CED4DA;
+  --color-gray-5: #ADB5BD;
+  --color-gray-6: #868E96;
+  --color-gray-7: #495057;
+  --color-gray-8: #343A40;
+  --color-gray-9: #212529;
+
+  /* red Colors */
+  --color-red-0: #FFF5F5;
+  --color-red-1: #FFE3E3;
+  --color-red-2: #FFC9C9;
+  --color-red-3: #FFA8A8;
+  --color-red-4: #FF8787;
+  --color-red-5: #FF6B6B;
+  --color-red-6: #FA5252;
+  --color-red-7: #F03E3E;
+  --color-red-8: #E03131;
+  --color-red-9: #C92A2A;
+
+  /* pink Colors */
+  --color-pink-0: #FFF0F6;
+  --color-pink-1: #FFDEEB;
+  --color-pink-2: #FCC2D7;
+  --color-pink-3: #FAA2C1;
+  --color-pink-4: #F783AC;
+  --color-pink-5: #F06595;
+  --color-pink-6: #E64980;
+  --color-pink-7: #D6336C;
+  --color-pink-8: #C2255C;
+  --color-pink-9: #A61E4D;
+
+  /* grape Colors */
+  --color-grape-0: #F8F0FC;
+  --color-grape-1: #F3D9FA;
+  --color-grape-2: #EEBEFA;
+  --color-grape-3: #E599F7;
+  --color-grape-4: #DA77F2;
+  --color-grape-5: #CC5DE8;
+  --color-grape-6: #BE4BDB;
+  --color-grape-7: #AE3EC9;
+  --color-grape-8: #9C36B5;
+  --color-grape-9: #862E9C;
+
+  /* violet Colors */
+  --color-violet-0: #F3F0FF;
+  --color-violet-1: #E5DBFF;
+  --color-violet-2: #D0BFFF;
+  --color-violet-3: #B197FC;
+  --color-violet-4: #9775FA;
+  --color-violet-5: #845EF7;
+  --color-violet-6: #7950F2;
+  --color-violet-7: #7048E8;
+  --color-violet-8: #6741D9;
+  --color-violet-9: #5F3DC4;
+
+  /* indigo Colors */
+  --color-indigo-0: #EDF2FF;
+  --color-indigo-1: #DBE4FF;
+  --color-indigo-2: #BAC8FF;
+  --color-indigo-3: #91A7FF;
+  --color-indigo-4: #748FFC;
+  --color-indigo-5: #5C7CFA;
+  --color-indigo-6: #4C6EF5;
+  --color-indigo-7: #4263EB;
+  --color-indigo-8: #3B5BDB;
+  --color-indigo-9: #364FC7;
+
+  /* blue Colors */
+  --color-blue-0: #E7F5FF;
+  --color-blue-1: #D0EBFF;
+  --color-blue-2: #A5D8FF;
+  --color-blue-3: #74C0FC;
+  --color-blue-4: #4DABF7;
+  --color-blue-5: #339AF0;
+  --color-blue-6: #228BE6;
+  --color-blue-7: #1C7ED6;
+  --color-blue-8: #1971C2;
+  --color-blue-9: #1864AB;
+
+  /* cyan Colors */
+  --color-cyan-0: #E3FAFC;
+  --color-cyan-1: #C5F6FA;
+  --color-cyan-2: #99E9F2;
+  --color-cyan-3: #66D9E8;
+  --color-cyan-4: #3BC9DB;
+  --color-cyan-5: #22B8CF;
+  --color-cyan-6: #15AABF;
+  --color-cyan-7: #1098AD;
+  --color-cyan-8: #0C8599;
+  --color-cyan-9: #0B7285;
+
+} 
+
+@layer base {
+  h1 {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: var(--leading-h1);
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: var(--leading-h2);
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    font-weight: 700;
+    line-height: var(--leading-h3);
+  }
+
+  h4 {
+    font-size: var(--text-h4);
+    font-weight: 700;
+    line-height: var(--leading-h4);
+  }
+
+  h5 {
+    font-size: var(--text-h5);
+    font-weight: 700;
+    line-height: var(--leading-h5);
+  }
+
+  h6 {
+    font-size: var(--text-h6);
+    font-weight: 700;
+    line-height: var(--leading-h6);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
